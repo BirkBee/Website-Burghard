@@ -13,6 +13,13 @@ const nextConfig = {
 
     return config;
   },
+  images: {
+    domains: [
+      "www.daedelow-parkett.de",
+      "www.parkettkaiser.de",
+      "www.holz-kunz.de",
+    ],
+  },
 };
 
 module.exports = nextConfig;

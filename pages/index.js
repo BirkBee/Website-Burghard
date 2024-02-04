@@ -27,7 +27,7 @@ import styled from "styled-components";
       <>
         <h1>Ooops... </h1>
         <p>
-          Error Loading Outivities. We were unable to load the Outivities list.
+          Error Loading Page. We were unable to load the Page.
           Please try again later.
         </p>
       </>
