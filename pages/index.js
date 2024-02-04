@@ -2,23 +2,26 @@ import { woodenfloors } from "@/lib/data";
 import Image from "next/image";
 import styled from "styled-components";
 
+export default function HomePage() {
   try {
     return (
       <>
-        <StyledTitle>All Outivities</StyledTitle>
-        <StyledOutivitieCardContainer>
+        <StyledTitle>Burghard Beese Parkettböden</StyledTitle>
+        <StyledWoodenfloorCardContainer>
           {woodenfloors.map((woodenfloor) => (
-            <StyledOutivitieCard key={woodenfloor.id}>
+            <StyledWoodenfloorCard key={woodenfloor.id}>
               <StyledImage
                 src={woodenfloor.image}
                 alt={woodenfloor.title}
                 width={300}
                 height={200}
               />
-              <StyledOutivityTitle>{woodenfloor.title}</StyledOutivityTitle>
-            </StyledOutivitieCard>
+              <StyledWoodenfloorTitle>
+                {woodenfloor.title}
+              </StyledWoodenfloorTitle>
+            </StyledWoodenfloorCard>
           ))}
-        </StyledOutivitieCardContainer>
+        </StyledWoodenfloorCardContainer>
       </>
     );
   } catch (error) {
@@ -27,8 +30,8 @@ import styled from "styled-components";
       <>
         <h1>Ooops... </h1>
         <p>
-          Error Loading Page. We were unable to load the Page.
-          Please try again later.
+          Error Loading Page. We were unable to load the Page. Please try again
+          later.
         </p>
       </>
     );
@@ -40,10 +43,10 @@ const StyledTitle = styled.h1`
   height: 2em;
   place-content: center;
   background-color: var(--primary-color);
-  color: var(--neutral-color);
+  color: var(--primary-color-hover);
 `;
 
-const StyledOutivitieCardContainer = styled.ul`
+const StyledWoodenfloorCardContainer = styled.ul`
   display: grid;
   gap: 1rem;
   padding: 20px;
@@ -51,7 +54,7 @@ const StyledOutivitieCardContainer = styled.ul`
   gap: 50px;
 `;
 
-const StyledOutivitieCard = styled.li`
+const StyledWoodenfloorCard = styled.li`
   position: relative;
   place-content: center;
   max-width: 640px;
@@ -67,51 +70,6 @@ const StyledImage = styled(Image)`
   overflow-clip-margin: content-box;
 `;
 
-const StyledOutivityTitle = styled.h2`
+const StyledWoodenfloorTitle = styled.h2`
   margin: 10px 20px 0px 20px;
 `;
-
-export const poppins = Poppins({
-  weight: "400",
-  subsets: ["latin"],
-});
-
-export const pacifico = Pacifico({
-  weight: "400",
-  subsets: ["latin"],
-});
-
-export const gochiHand = Gochi_Hand({
-  weight: "400",
-  subsets: ["latin"],
-});
-
-export default createGlobalStyle`
-  *,
-@@ -7,8 +25,33 @@ export default createGlobalStyle`
-    box-sizing: border-box;
-  }
-  :root {
-    --primary-color: #172633;
-    --secondary-color-blue: #252629;
-    --third-color: #08A689;
-    --primary-color-hover: #FFBC0A;
-    --neutral-color: #E5E5E5;
-    @media (max-width: 599px) {font-size: 16px;}
-    @media (min-width: 600px) {font-size: 18px;}
-    @media (min-width: 1200px) {font-size: 20px;}
-  }
-  body {
-    margin: 0;
-    font-family: system-ui;
-    font-family: ${poppins.style.fontFamily};
-  }
-  ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-  }
-  h1 {
-    font-family: ${pacifico.style.fontFamily};
-    letter-spacing: 2px;
-  }

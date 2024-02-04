@@ -22,6 +22,7 @@ export default createGlobalStyle`
   *,
   *::before
   *::after{
+
     box-sizing: border-box;
   }
   :root {
@@ -36,7 +37,7 @@ export default createGlobalStyle`
   }
   body {
     margin: 0;
-
+    font-family: system-ui;
     font-family: ${poppins.style.fontFamily};
   }
   ul {
